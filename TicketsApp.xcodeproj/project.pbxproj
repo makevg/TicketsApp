@@ -15,6 +15,13 @@
 		146A39791C99D4D70068FDD7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 146A39771C99D4D70068FDD7 /* LaunchScreen.storyboard */; };
 		146A39841C99D4D70068FDD7 /* TicketsAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 146A39831C99D4D70068FDD7 /* TicketsAppTests.m */; };
 		146A398F1C99D4D80068FDD7 /* TicketsAppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 146A398E1C99D4D80068FDD7 /* TicketsAppUITests.m */; };
+		146A39A11C99D8170068FDD7 /* allStations.json in Resources */ = {isa = PBXBuildFile; fileRef = 146A39A01C99D8170068FDD7 /* allStations.json */; };
+		146A39A81C99DA800068FDD7 /* MESheduleService.m in Sources */ = {isa = PBXBuildFile; fileRef = 146A39A71C99DA800068FDD7 /* MESheduleService.m */; };
+		146A39AE1C99DB460068FDD7 /* MEBaseService.m in Sources */ = {isa = PBXBuildFile; fileRef = 146A39AD1C99DB460068FDD7 /* MEBaseService.m */; };
+		146A39B21C99E4F80068FDD7 /* MECity.m in Sources */ = {isa = PBXBuildFile; fileRef = 146A39B11C99E4F80068FDD7 /* MECity.m */; };
+		146A39B61C99E5410068FDD7 /* MECityLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 146A39B51C99E5410068FDD7 /* MECityLocation.m */; };
+		146A39BA1C99E5800068FDD7 /* MEStation.m in Sources */ = {isa = PBXBuildFile; fileRef = 146A39B91C99E5800068FDD7 /* MEStation.m */; };
+		146A39BE1C99E5AB0068FDD7 /* MEStationLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 146A39BD1C99E5AB0068FDD7 /* MEStationLocation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +58,19 @@
 		146A398A1C99D4D70068FDD7 /* TicketsAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TicketsAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		146A398E1C99D4D80068FDD7 /* TicketsAppUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TicketsAppUITests.m; sourceTree = "<group>"; };
 		146A39901C99D4D80068FDD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		146A39A01C99D8170068FDD7 /* allStations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = allStations.json; sourceTree = "<group>"; };
+		146A39A61C99DA800068FDD7 /* MESheduleService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MESheduleService.h; sourceTree = "<group>"; };
+		146A39A71C99DA800068FDD7 /* MESheduleService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MESheduleService.m; sourceTree = "<group>"; };
+		146A39AC1C99DB460068FDD7 /* MEBaseService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEBaseService.h; sourceTree = "<group>"; };
+		146A39AD1C99DB460068FDD7 /* MEBaseService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MEBaseService.m; sourceTree = "<group>"; };
+		146A39B01C99E4F80068FDD7 /* MECity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MECity.h; sourceTree = "<group>"; };
+		146A39B11C99E4F80068FDD7 /* MECity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MECity.m; sourceTree = "<group>"; };
+		146A39B41C99E5410068FDD7 /* MECityLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MECityLocation.h; sourceTree = "<group>"; };
+		146A39B51C99E5410068FDD7 /* MECityLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MECityLocation.m; sourceTree = "<group>"; };
+		146A39B81C99E5800068FDD7 /* MEStation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEStation.h; sourceTree = "<group>"; };
+		146A39B91C99E5800068FDD7 /* MEStation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MEStation.m; sourceTree = "<group>"; };
+		146A39BC1C99E5AB0068FDD7 /* MEStationLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEStationLocation.h; sourceTree = "<group>"; };
+		146A39BD1C99E5AB0068FDD7 /* MEStationLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MEStationLocation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +124,7 @@
 				146A399C1C99D4EA0068FDD7 /* Common */,
 				146A399D1C99D5030068FDD7 /* Modules */,
 				146A399F1C99D5E40068FDD7 /* Resources */,
+				146A39A21C99D95E0068FDD7 /* ServiceLayer */,
 				146A396F1C99D4D70068FDD7 /* ViewController.h */,
 				146A39701C99D4D70068FDD7 /* ViewController.m */,
 			);
@@ -144,6 +165,8 @@
 		146A399D1C99D5030068FDD7 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				146A39A41C99D9EF0068FDD7 /* About */,
+				146A39A31C99D9D80068FDD7 /* Shedule */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -151,9 +174,107 @@
 		146A399F1C99D5E40068FDD7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				146A39A01C99D8170068FDD7 /* allStations.json */,
 				146A39751C99D4D70068FDD7 /* Assets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		146A39A21C99D95E0068FDD7 /* ServiceLayer */ = {
+			isa = PBXGroup;
+			children = (
+				146A39A91C99DA940068FDD7 /* Services */,
+				146A39A51C99DA1E0068FDD7 /* Models */,
+			);
+			path = ServiceLayer;
+			sourceTree = "<group>";
+		};
+		146A39A31C99D9D80068FDD7 /* Shedule */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Shedule;
+			sourceTree = "<group>";
+		};
+		146A39A41C99D9EF0068FDD7 /* About */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = About;
+			sourceTree = "<group>";
+		};
+		146A39A51C99DA1E0068FDD7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				146A39AF1C99E4D50068FDD7 /* City */,
+				146A39B31C99E5240068FDD7 /* CityLocation */,
+				146A39B71C99E56B0068FDD7 /* Station */,
+				146A39BB1C99E58B0068FDD7 /* StationLocation */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		146A39A91C99DA940068FDD7 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				146A39AA1C99DAAB0068FDD7 /* BaseService */,
+				146A39AB1C99DABE0068FDD7 /* SheduleService */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		146A39AA1C99DAAB0068FDD7 /* BaseService */ = {
+			isa = PBXGroup;
+			children = (
+				146A39AC1C99DB460068FDD7 /* MEBaseService.h */,
+				146A39AD1C99DB460068FDD7 /* MEBaseService.m */,
+			);
+			path = BaseService;
+			sourceTree = "<group>";
+		};
+		146A39AB1C99DABE0068FDD7 /* SheduleService */ = {
+			isa = PBXGroup;
+			children = (
+				146A39A61C99DA800068FDD7 /* MESheduleService.h */,
+				146A39A71C99DA800068FDD7 /* MESheduleService.m */,
+			);
+			path = SheduleService;
+			sourceTree = "<group>";
+		};
+		146A39AF1C99E4D50068FDD7 /* City */ = {
+			isa = PBXGroup;
+			children = (
+				146A39B01C99E4F80068FDD7 /* MECity.h */,
+				146A39B11C99E4F80068FDD7 /* MECity.m */,
+			);
+			path = City;
+			sourceTree = "<group>";
+		};
+		146A39B31C99E5240068FDD7 /* CityLocation */ = {
+			isa = PBXGroup;
+			children = (
+				146A39B41C99E5410068FDD7 /* MECityLocation.h */,
+				146A39B51C99E5410068FDD7 /* MECityLocation.m */,
+			);
+			path = CityLocation;
+			sourceTree = "<group>";
+		};
+		146A39B71C99E56B0068FDD7 /* Station */ = {
+			isa = PBXGroup;
+			children = (
+				146A39B81C99E5800068FDD7 /* MEStation.h */,
+				146A39B91C99E5800068FDD7 /* MEStation.m */,
+			);
+			path = Station;
+			sourceTree = "<group>";
+		};
+		146A39BB1C99E58B0068FDD7 /* StationLocation */ = {
+			isa = PBXGroup;
+			children = (
+				146A39BC1C99E5AB0068FDD7 /* MEStationLocation.h */,
+				146A39BD1C99E5AB0068FDD7 /* MEStationLocation.m */,
+			);
+			path = StationLocation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,6 +382,7 @@
 			files = (
 				146A39791C99D4D70068FDD7 /* LaunchScreen.storyboard in Resources */,
 				146A39761C99D4D70068FDD7 /* Assets.xcassets in Resources */,
+				146A39A11C99D8170068FDD7 /* allStations.json in Resources */,
 				146A39741C99D4D70068FDD7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -286,8 +408,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				146A39B21C99E4F80068FDD7 /* MECity.m in Sources */,
 				146A39711C99D4D70068FDD7 /* ViewController.m in Sources */,
+				146A39BA1C99E5800068FDD7 /* MEStation.m in Sources */,
 				146A396E1C99D4D70068FDD7 /* AppDelegate.m in Sources */,
+				146A39BE1C99E5AB0068FDD7 /* MEStationLocation.m in Sources */,
+				146A39A81C99DA800068FDD7 /* MESheduleService.m in Sources */,
+				146A39AE1C99DB460068FDD7 /* MEBaseService.m in Sources */,
+				146A39B61C99E5410068FDD7 /* MECityLocation.m in Sources */,
 				146A396B1C99D4D70068FDD7 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "MESheduleService.h"
 
 @interface ViewController ()
 
@@ -16,12 +17,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-}
+    
+    NSArray *citiesFrom = [Shedule_service citiesFrom];
+    NSLog(@"%@", citiesFrom.description);
+    NSArray *citiesTo = [Shedule_service citiesTo];
+    NSLog(@"%@", citiesTo.description);
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end
