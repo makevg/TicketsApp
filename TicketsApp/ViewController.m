@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "MESheduleService.h"
+#import "MEScheduleService.h"
 
 @interface ViewController ()
 
@@ -18,9 +18,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSArray *citiesFrom = [Shedule_service citiesFrom];
+    NSArray *citiesFrom = [Schedule_service citiesFrom];
     NSLog(@"%@", citiesFrom.description);
-    NSArray *citiesTo = [Shedule_service citiesTo];
+    NSArray *citiesTo = [Schedule_service citiesTo];
     NSLog(@"%@", citiesTo.description);
 
 }

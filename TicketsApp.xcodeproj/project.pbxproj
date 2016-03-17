@@ -16,7 +16,7 @@
 		146A39841C99D4D70068FDD7 /* TicketsAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 146A39831C99D4D70068FDD7 /* TicketsAppTests.m */; };
 		146A398F1C99D4D80068FDD7 /* TicketsAppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 146A398E1C99D4D80068FDD7 /* TicketsAppUITests.m */; };
 		146A39A11C99D8170068FDD7 /* allStations.json in Resources */ = {isa = PBXBuildFile; fileRef = 146A39A01C99D8170068FDD7 /* allStations.json */; };
-		146A39A81C99DA800068FDD7 /* MESheduleService.m in Sources */ = {isa = PBXBuildFile; fileRef = 146A39A71C99DA800068FDD7 /* MESheduleService.m */; };
+		146A39A81C99DA800068FDD7 /* MEScheduleService.m in Sources */ = {isa = PBXBuildFile; fileRef = 146A39A71C99DA800068FDD7 /* MEScheduleService.m */; };
 		146A39AE1C99DB460068FDD7 /* MEBaseService.m in Sources */ = {isa = PBXBuildFile; fileRef = 146A39AD1C99DB460068FDD7 /* MEBaseService.m */; };
 		146A39B21C99E4F80068FDD7 /* MECity.m in Sources */ = {isa = PBXBuildFile; fileRef = 146A39B11C99E4F80068FDD7 /* MECity.m */; };
 		146A39B61C99E5410068FDD7 /* MECityLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 146A39B51C99E5410068FDD7 /* MECityLocation.m */; };
@@ -59,8 +59,8 @@
 		146A398E1C99D4D80068FDD7 /* TicketsAppUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TicketsAppUITests.m; sourceTree = "<group>"; };
 		146A39901C99D4D80068FDD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		146A39A01C99D8170068FDD7 /* allStations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = allStations.json; sourceTree = "<group>"; };
-		146A39A61C99DA800068FDD7 /* MESheduleService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MESheduleService.h; sourceTree = "<group>"; };
-		146A39A71C99DA800068FDD7 /* MESheduleService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MESheduleService.m; sourceTree = "<group>"; };
+		146A39A61C99DA800068FDD7 /* MEScheduleService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEScheduleService.h; sourceTree = "<group>"; };
+		146A39A71C99DA800068FDD7 /* MEScheduleService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MEScheduleService.m; sourceTree = "<group>"; };
 		146A39AC1C99DB460068FDD7 /* MEBaseService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEBaseService.h; sourceTree = "<group>"; };
 		146A39AD1C99DB460068FDD7 /* MEBaseService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MEBaseService.m; sourceTree = "<group>"; };
 		146A39B01C99E4F80068FDD7 /* MECity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MECity.h; sourceTree = "<group>"; };
@@ -166,7 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				146A39A41C99D9EF0068FDD7 /* About */,
-				146A39A31C99D9D80068FDD7 /* Shedule */,
+				146A39A31C99D9D80068FDD7 /* Schedule */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -189,11 +189,11 @@
 			path = ServiceLayer;
 			sourceTree = "<group>";
 		};
-		146A39A31C99D9D80068FDD7 /* Shedule */ = {
+		146A39A31C99D9D80068FDD7 /* Schedule */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Shedule;
+			path = Schedule;
 			sourceTree = "<group>";
 		};
 		146A39A41C99D9EF0068FDD7 /* About */ = {
@@ -218,7 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				146A39AA1C99DAAB0068FDD7 /* BaseService */,
-				146A39AB1C99DABE0068FDD7 /* SheduleService */,
+				146A39AB1C99DABE0068FDD7 /* ScheduleService */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -232,13 +232,13 @@
 			path = BaseService;
 			sourceTree = "<group>";
 		};
-		146A39AB1C99DABE0068FDD7 /* SheduleService */ = {
+		146A39AB1C99DABE0068FDD7 /* ScheduleService */ = {
 			isa = PBXGroup;
 			children = (
-				146A39A61C99DA800068FDD7 /* MESheduleService.h */,
-				146A39A71C99DA800068FDD7 /* MESheduleService.m */,
+				146A39A61C99DA800068FDD7 /* MEScheduleService.h */,
+				146A39A71C99DA800068FDD7 /* MEScheduleService.m */,
 			);
-			path = SheduleService;
+			path = ScheduleService;
 			sourceTree = "<group>";
 		};
 		146A39AF1C99E4D50068FDD7 /* City */ = {
@@ -413,7 +413,7 @@
 				146A39BA1C99E5800068FDD7 /* MEStation.m in Sources */,
 				146A396E1C99D4D70068FDD7 /* AppDelegate.m in Sources */,
 				146A39BE1C99E5AB0068FDD7 /* MEStationLocation.m in Sources */,
-				146A39A81C99DA800068FDD7 /* MESheduleService.m in Sources */,
+				146A39A81C99DA800068FDD7 /* MEScheduleService.m in Sources */,
 				146A39AE1C99DB460068FDD7 /* MEBaseService.m in Sources */,
 				146A39B61C99E5410068FDD7 /* MECityLocation.m in Sources */,
 				146A396B1C99D4D70068FDD7 /* main.m in Sources */,
@@ -644,6 +644,7 @@
 				146A39951C99D4D80068FDD7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		146A39961C99D4D80068FDD7 /* Build configuration list for PBXNativeTarget "TicketsAppTests" */ = {
 			isa = XCConfigurationList;
@@ -652,6 +653,7 @@
 				146A39981C99D4D80068FDD7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		146A39991C99D4D80068FDD7 /* Build configuration list for PBXNativeTarget "TicketsAppUITests" */ = {
 			isa = XCConfigurationList;
@@ -660,6 +662,7 @@
 				146A399B1C99D4D80068FDD7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
