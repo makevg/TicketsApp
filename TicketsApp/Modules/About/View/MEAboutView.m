@@ -29,7 +29,7 @@
 }
 
 - (void)setCopyright:(NSString *)copyright {
-    self.copyrightLabel.text = [NSString stringWithFormat:@"Copyright by %@", copyright];
+    self.copyrightLabel.text = copyright;
 }
 
 @end

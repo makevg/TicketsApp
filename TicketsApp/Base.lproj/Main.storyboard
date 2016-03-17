@@ -54,7 +54,7 @@
         <!--Расписание-->
         <scene sceneID="vrV-IL-3wy">
             <objects>
-                <viewController id="axO-dq-1Dz" sceneMemberID="viewController">
+                <viewController id="axO-dq-1Dz" customClass="MEScheduleVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="CL3-RD-48s"/>
                         <viewControllerLayoutGuide type="bottom" id="HTB-b5-iDj"/>
@@ -62,7 +62,53 @@
                     <view key="view" contentMode="scaleToFill" id="1m6-v9-b6r">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4VY-08-8We">
+                                <rect key="frame" x="16" y="80" width="56" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="56" id="uYN-aq-qwC"/>
+                                </constraints>
+                                <state key="normal" title="Откуда:"/>
+                                <connections>
+                                    <action selector="tappedFromButton:" destination="axO-dq-1Dz" eventType="touchUpInside" id="PPM-FB-JHK"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="выберите станцию" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J2U-Z0-2tR">
+                                <rect key="frame" x="80" y="86" width="512" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gsQ-X1-97S">
+                                <rect key="frame" x="16" y="126" width="39" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="39" id="xgg-sr-KJY"/>
+                                </constraints>
+                                <state key="normal" title="Куда:"/>
+                                <connections>
+                                    <action selector="tappedToButton:" destination="axO-dq-1Dz" eventType="touchUpInside" id="igw-k0-SyS"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="выберите станцию" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AID-KO-SpE">
+                                <rect key="frame" x="63" y="132" width="529" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="4VY-08-8We" firstAttribute="leading" secondItem="1m6-v9-b6r" secondAttribute="leading" constant="16" id="5jq-52-js1"/>
+                            <constraint firstItem="4VY-08-8We" firstAttribute="top" secondItem="CL3-RD-48s" secondAttribute="bottom" constant="16" id="Bdh-QZ-JW8"/>
+                            <constraint firstItem="J2U-Z0-2tR" firstAttribute="leading" secondItem="4VY-08-8We" secondAttribute="trailing" constant="8" id="LCS-Fl-qap"/>
+                            <constraint firstItem="J2U-Z0-2tR" firstAttribute="centerY" secondItem="4VY-08-8We" secondAttribute="centerY" id="M4b-ty-dNy"/>
+                            <constraint firstItem="gsQ-X1-97S" firstAttribute="top" secondItem="4VY-08-8We" secondAttribute="bottom" constant="16" id="Vln-26-VcS"/>
+                            <constraint firstItem="gsQ-X1-97S" firstAttribute="leading" secondItem="1m6-v9-b6r" secondAttribute="leading" constant="16" id="XBX-su-34t"/>
+                            <constraint firstAttribute="trailing" secondItem="AID-KO-SpE" secondAttribute="trailing" constant="8" id="bgM-8W-s27"/>
+                            <constraint firstItem="AID-KO-SpE" firstAttribute="centerY" secondItem="gsQ-X1-97S" secondAttribute="centerY" id="e8b-hH-yMd"/>
+                            <constraint firstItem="AID-KO-SpE" firstAttribute="leading" secondItem="gsQ-X1-97S" secondAttribute="trailing" constant="8" id="nAW-Rh-BCb"/>
+                            <constraint firstAttribute="trailing" secondItem="J2U-Z0-2tR" secondAttribute="trailing" constant="8" id="sP0-YO-0Y2"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Расписание" id="YrV-o8-DBL"/>
                 </viewController>

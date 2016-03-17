@@ -31,6 +31,13 @@
     return _appVersion;
 }
 
+- (NSString *)copyright {
+    if (!_copyright) {
+        _copyright = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"NSHumanReadableCopyright"];
+    }
+    return _copyright;
+}
+
 #pragma mark - Private
 
 - (void)lazyLoad {

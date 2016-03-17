@@ -24,18 +24,7 @@
 #pragma mark - Private
 
 - (void)localConfigure {
-    [self prepareTapRecognizer];
     [self configureController];
-}
-
-- (void)prepareTapRecognizer {
-    UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self
-                                                                                           action:@selector(performTapppedBackgroundAction)];
-    [self.view addGestureRecognizer:tapGestureRecognizer];
-}
-
-- (void)performTapppedBackgroundAction {
-    [self.view endEditing:YES];
 }
 
 #pragma mark - Public
@@ -53,6 +42,18 @@
                                                      owner:self
                                                    options:nil];
     return (UIView *)[viewNib firstObject];
+}
+
+- (UIViewController *)loadControllerFromStoryboard:(NSString *)storyboardName {
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:storyboardName bundle:nil];
+    UIViewController *vc = [sb instantiateInitialViewController];
+    return vc;
+}
+
+- (UIViewController *)loadControllerFromStoryboard:(NSString *)storyboardName byIdentifier:(NSString *)identifier {
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:storyboardName bundle:nil];
+    UIViewController *vc = [sb instantiateViewControllerWithIdentifier:identifier];
+    return vc;
 }
 
 - (void)configureController {

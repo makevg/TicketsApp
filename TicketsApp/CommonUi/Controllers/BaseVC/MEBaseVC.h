@@ -13,6 +13,9 @@
 + (NSString *)storyboardName;
 + (NSString *)identifier;
 + (UIView *)loadViewByNibName:(NSString *)nibName;
+- (UIViewController *)loadControllerFromStoryboard:(NSString *)storyboardName;
+- (UIViewController *)loadControllerFromStoryboard:(NSString *)storyboardName
+                                      byIdentifier:(NSString *)identifier;
 
 - (void)configureController;
 

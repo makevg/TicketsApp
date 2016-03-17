@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7g8-mF-Sll">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <scenes>
+        <!--Станции-->
+        <scene sceneID="fh8-2F-JuZ">
+            <objects>
+                <viewController id="7g8-mF-Sll" customClass="MEStationsVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Zpc-Ss-MpO"/>
+                        <viewControllerLayoutGuide type="bottom" id="31r-ak-0cu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bl5-6z-jUO" customClass="MEStationsView">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Tfb-tF-mpw">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="7g8-mF-Sll" id="cjv-tq-dra"/>
+                                </connections>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="iz8-7C-ziq">
+                                <rect key="frame" x="0.0" y="44" width="600" height="556"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MEStationCell" id="645-bu-CeR" customClass="MEStationCell">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="645-bu-CeR" id="6GY-NE-zqA">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Tfb-tF-mpw" firstAttribute="top" secondItem="bl5-6z-jUO" secondAttribute="top" id="AE1-Ji-Xn2"/>
+                            <constraint firstAttribute="trailing" secondItem="Tfb-tF-mpw" secondAttribute="trailing" id="DId-Da-AiI"/>
+                            <constraint firstItem="Tfb-tF-mpw" firstAttribute="leading" secondItem="bl5-6z-jUO" secondAttribute="leading" id="O9Q-2E-ZXc"/>
+                            <constraint firstItem="iz8-7C-ziq" firstAttribute="top" secondItem="Tfb-tF-mpw" secondAttribute="bottom" id="YA9-TP-bcz"/>
+                            <constraint firstItem="31r-ak-0cu" firstAttribute="top" secondItem="iz8-7C-ziq" secondAttribute="bottom" id="bVW-Tz-6Xu"/>
+                            <constraint firstAttribute="trailing" secondItem="iz8-7C-ziq" secondAttribute="trailing" id="cks-FY-d0c"/>
+                            <constraint firstItem="iz8-7C-ziq" firstAttribute="leading" secondItem="bl5-6z-jUO" secondAttribute="leading" id="d3B-Fb-K5A"/>
+                        </constraints>
+                        <connections>
+                            <outlet property="searchBar" destination="Tfb-tF-mpw" id="8KT-dE-VZX"/>
+                            <outlet property="tableView" destination="iz8-7C-ziq" id="5IS-y1-Avo"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" title="Станции" id="Iee-1y-Sbb">
+                        <barButtonItem key="rightBarButtonItem" title="Отменить" id="WHF-Tm-YyN">
+                            <connections>
+                                <action selector="tappedCancelButton:" destination="7g8-mF-Sll" id="DUf-TJ-X9a"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="contentView" destination="bl5-6z-jUO" id="6WX-rF-LeD"/>
+                        <outlet property="searchDisplayController" destination="Jg4-rU-OKf" id="XFI-1e-etU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NWk-Wx-IX7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="Jg4-rU-OKf">
+                    <connections>
+                        <outlet property="delegate" destination="7g8-mF-Sll" id="wI1-RD-CWH"/>
+                        <outlet property="searchBar" destination="Tfb-tF-mpw" id="8ct-DH-0Kq"/>
+                        <outlet property="searchContentsController" destination="7g8-mF-Sll" id="7VS-0J-QsI"/>
+                        <outlet property="searchResultsDataSource" destination="7g8-mF-Sll" id="v1s-5s-cA1"/>
+                        <outlet property="searchResultsDelegate" destination="7g8-mF-Sll" id="8Js-Md-CGc"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="495" y="430"/>
+        </scene>
+    </scenes>
+</document>

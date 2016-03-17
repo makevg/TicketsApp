@@ -27,6 +27,11 @@
 		8104AF631C9ADD6100D00239 /* MEBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8104AF621C9ADD6100D00239 /* MEBaseView.m */; };
 		8104AF661C9ADF4B00D00239 /* MEBaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8104AF651C9ADF4B00D00239 /* MEBaseVC.m */; };
 		8104AF6B1C9AE0C600D00239 /* MEBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8104AF6A1C9AE0C600D00239 /* MEBaseTableViewCell.m */; };
+		8104AF6E1C9AE41800D00239 /* Stations.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8104AF6D1C9AE41800D00239 /* Stations.storyboard */; };
+		8104AF751C9AE96800D00239 /* MEStationsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8104AF741C9AE96800D00239 /* MEStationsVC.m */; };
+		8104AF781C9AE99700D00239 /* MEStationsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8104AF771C9AE99700D00239 /* MEStationsView.m */; };
+		8104AF7B1C9AEA2A00D00239 /* MEStationCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8104AF7A1C9AEA2A00D00239 /* MEStationCell.m */; };
+		8104AF801C9AF3D600D00239 /* MEScheduleVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8104AF7F1C9AF3D600D00239 /* MEScheduleVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +91,15 @@
 		8104AF651C9ADF4B00D00239 /* MEBaseVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MEBaseVC.m; sourceTree = "<group>"; };
 		8104AF691C9AE0C600D00239 /* MEBaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEBaseTableViewCell.h; sourceTree = "<group>"; };
 		8104AF6A1C9AE0C600D00239 /* MEBaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MEBaseTableViewCell.m; sourceTree = "<group>"; };
+		8104AF6D1C9AE41800D00239 /* Stations.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Stations.storyboard; sourceTree = "<group>"; };
+		8104AF731C9AE96800D00239 /* MEStationsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEStationsVC.h; sourceTree = "<group>"; };
+		8104AF741C9AE96800D00239 /* MEStationsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MEStationsVC.m; sourceTree = "<group>"; };
+		8104AF761C9AE99700D00239 /* MEStationsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEStationsView.h; sourceTree = "<group>"; };
+		8104AF771C9AE99700D00239 /* MEStationsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MEStationsView.m; sourceTree = "<group>"; };
+		8104AF791C9AEA2A00D00239 /* MEStationCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEStationCell.h; sourceTree = "<group>"; };
+		8104AF7A1C9AEA2A00D00239 /* MEStationCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MEStationCell.m; sourceTree = "<group>"; };
+		8104AF7E1C9AF3D600D00239 /* MEScheduleVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEScheduleVC.h; sourceTree = "<group>"; };
+		8104AF7F1C9AF3D600D00239 /* MEScheduleVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MEScheduleVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,9 +193,10 @@
 		146A399D1C99D5030068FDD7 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				146A39721C99D4D70068FDD7 /* Main.storyboard */,
 				146A39A41C99D9EF0068FDD7 /* About */,
+				146A39721C99D4D70068FDD7 /* Main.storyboard */,
 				146A39A31C99D9D80068FDD7 /* Schedule */,
+				8104AF6C1C9AE3F500D00239 /* Stations */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -209,6 +224,8 @@
 		146A39A31C99D9D80068FDD7 /* Schedule */ = {
 			isa = PBXGroup;
 			children = (
+				8104AF7D1C9AF3B400D00239 /* Controller */,
+				8104AF7C1C9AF3A200D00239 /* View */,
 			);
 			path = Schedule;
 			sourceTree = "<group>";
@@ -382,6 +399,68 @@
 			path = BaseTableViewCell;
 			sourceTree = "<group>";
 		};
+		8104AF6C1C9AE3F500D00239 /* Stations */ = {
+			isa = PBXGroup;
+			children = (
+				8104AF6F1C9AE8DC00D00239 /* StationsScreen */,
+				8104AF6D1C9AE41800D00239 /* Stations.storyboard */,
+			);
+			path = Stations;
+			sourceTree = "<group>";
+		};
+		8104AF6F1C9AE8DC00D00239 /* StationsScreen */ = {
+			isa = PBXGroup;
+			children = (
+				8104AF721C9AE93800D00239 /* Controller */,
+				8104AF701C9AE90B00D00239 /* View */,
+			);
+			path = StationsScreen;
+			sourceTree = "<group>";
+		};
+		8104AF701C9AE90B00D00239 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8104AF711C9AE92100D00239 /* StationCell */,
+				8104AF761C9AE99700D00239 /* MEStationsView.h */,
+				8104AF771C9AE99700D00239 /* MEStationsView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8104AF711C9AE92100D00239 /* StationCell */ = {
+			isa = PBXGroup;
+			children = (
+				8104AF791C9AEA2A00D00239 /* MEStationCell.h */,
+				8104AF7A1C9AEA2A00D00239 /* MEStationCell.m */,
+			);
+			path = StationCell;
+			sourceTree = "<group>";
+		};
+		8104AF721C9AE93800D00239 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8104AF731C9AE96800D00239 /* MEStationsVC.h */,
+				8104AF741C9AE96800D00239 /* MEStationsVC.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8104AF7C1C9AF3A200D00239 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8104AF7D1C9AF3B400D00239 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8104AF7E1C9AF3D600D00239 /* MEScheduleVC.h */,
+				8104AF7F1C9AF3D600D00239 /* MEScheduleVC.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -485,6 +564,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8104AF6E1C9AE41800D00239 /* Stations.storyboard in Resources */,
 				146A39791C99D4D70068FDD7 /* LaunchScreen.storyboard in Resources */,
 				146A39761C99D4D70068FDD7 /* Assets.xcassets in Resources */,
 				146A39A11C99D8170068FDD7 /* allStations.json in Resources */,
@@ -516,15 +596,19 @@
 				8104AF4B1C9AC87200D00239 /* MELocation.m in Sources */,
 				8104AF581C9AD91400D00239 /* MEAboutVC.m in Sources */,
 				146A39B21C99E4F80068FDD7 /* MECity.m in Sources */,
+				8104AF751C9AE96800D00239 /* MEStationsVC.m in Sources */,
 				8104AF631C9ADD6100D00239 /* MEBaseView.m in Sources */,
 				8104AF5B1C9AD93600D00239 /* MEAboutView.m in Sources */,
 				146A39BA1C99E5800068FDD7 /* MEStation.m in Sources */,
 				8104AF661C9ADF4B00D00239 /* MEBaseVC.m in Sources */,
 				146A396E1C99D4D70068FDD7 /* AppDelegate.m in Sources */,
 				8104AF531C9AD73700D00239 /* MEUtilsService.m in Sources */,
+				8104AF7B1C9AEA2A00D00239 /* MEStationCell.m in Sources */,
 				8104AF6B1C9AE0C600D00239 /* MEBaseTableViewCell.m in Sources */,
 				8104AF4E1C9AD0AC00D00239 /* MEStyle.m in Sources */,
+				8104AF801C9AF3D600D00239 /* MEScheduleVC.m in Sources */,
 				146A39A81C99DA800068FDD7 /* MEScheduleService.m in Sources */,
+				8104AF781C9AE99700D00239 /* MEStationsView.m in Sources */,
 				146A39AE1C99DB460068FDD7 /* MEBaseService.m in Sources */,
 				146A396B1C99D4D70068FDD7 /* main.m in Sources */,
 			);

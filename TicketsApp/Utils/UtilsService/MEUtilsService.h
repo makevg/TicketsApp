@@ -13,6 +13,7 @@
 @interface MEUtilsService : NSObject
 
 @property (nonatomic) NSString *appVersion;
+@property (nonatomic) NSString *copyright;
 
 + (instancetype)sharedInstance;
 

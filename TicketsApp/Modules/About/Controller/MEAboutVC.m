@@ -19,9 +19,8 @@
 #pragma mark - Configure
 
 - (void)configureController {
-    NSString *appVersion = [Utils_service appVersion];
-    [self.contentView setAppVersion:appVersion];
-    [self.contentView setCopyright:@"Maximychev Evgeny"];
+    [self.contentView setAppVersion:[Utils_service appVersion]];
+    [self.contentView setCopyright:[Utils_service copyright]];
 }
 
 @end
