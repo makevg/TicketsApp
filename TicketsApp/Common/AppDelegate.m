@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "MEStyle.h"
 
 @interface AppDelegate ()
 
@@ -16,8 +17,27 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    [self configureNavBar];
+    [self configureTabBar];
+    
     return YES;
+}
+
+- (void)configureNavBar {
+    [[UINavigationBar appearance] setBarTintColor:[MEStyle blueColor]];
+    [[UINavigationBar appearance] setTintColor:[MEStyle whiteColor]];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[MEStyle whiteColor],
+                                                           NSFontAttributeName:[MEStyle defaultFontOfSize:16.f]}];
+    [[UINavigationBar appearance] setBackgroundImage:[[UIImage alloc] init]
+                                      forBarPosition:UIBarPositionAny
+                                          barMetrics:UIBarMetricsDefault];
+    [[UINavigationBar appearance] setShadowImage:[[UIImage alloc] init]];
+    [[UINavigationBar appearance] setTranslucent:NO];
+}
+
+- (void)configureTabBar {
+    [[UITabBar appearance] setBarTintColor:[MEStyle blueColor]];
+    [[UITabBar appearance] setTranslucent:NO];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

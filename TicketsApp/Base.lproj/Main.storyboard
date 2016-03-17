@@ -1,25 +1,134 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7Kw-My-c2T">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--О приложении-->
+        <scene sceneID="1Sa-ef-axj">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="XnJ-aa-EfE" customClass="MEAboutVC" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="SU0-eT-T4x"/>
+                        <viewControllerLayoutGuide type="bottom" id="Of6-pT-zoc"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="O0Y-Kr-xHF" customClass="MEAboutView">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="app version" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rhc-aP-dVj">
+                                <rect key="frame" x="256" y="290" width="89" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyright" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gnL-oq-8il">
+                                <rect key="frame" x="262" y="327" width="76" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gnL-oq-8il" firstAttribute="top" secondItem="Rhc-aP-dVj" secondAttribute="bottom" constant="16" id="0My-rx-xH3"/>
+                            <constraint firstItem="Rhc-aP-dVj" firstAttribute="centerX" secondItem="O0Y-Kr-xHF" secondAttribute="centerX" id="6Q2-ya-Vkt"/>
+                            <constraint firstItem="gnL-oq-8il" firstAttribute="centerX" secondItem="O0Y-Kr-xHF" secondAttribute="centerX" id="Hbz-dL-fxI"/>
+                            <constraint firstItem="Rhc-aP-dVj" firstAttribute="centerY" secondItem="O0Y-Kr-xHF" secondAttribute="centerY" id="I7a-B8-iuQ"/>
+                        </constraints>
+                        <connections>
+                            <outlet property="appVersionLabel" destination="Rhc-aP-dVj" id="kkt-A3-cw6"/>
+                            <outlet property="copyrightLabel" destination="gnL-oq-8il" id="Te3-iI-5kT"/>
+                        </connections>
                     </view>
+                    <navigationItem key="navigationItem" title="О приложении" id="Rvn-Fg-wbP"/>
+                    <connections>
+                        <outlet property="contentView" destination="O0Y-Kr-xHF" id="2Nv-vp-1pI"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TDi-Q1-IIo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="2076" y="821"/>
+        </scene>
+        <!--Расписание-->
+        <scene sceneID="vrV-IL-3wy">
+            <objects>
+                <viewController id="axO-dq-1Dz" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CL3-RD-48s"/>
+                        <viewControllerLayoutGuide type="bottom" id="HTB-b5-iDj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1m6-v9-b6r">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Расписание" id="YrV-o8-DBL"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S7Z-Vl-HeC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2076" y="167"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="DqN-t0-jhe">
+            <objects>
+                <tabBarController id="7Kw-My-c2T" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="PCv-ca-cem">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="AYN-cN-eOg" kind="relationship" relationship="viewControllers" id="UBy-DW-DWO"/>
+                        <segue destination="swb-tw-Nec" kind="relationship" relationship="viewControllers" id="ZnK-9P-giz"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oze-Mm-Gkv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="689" y="475"/>
+        </scene>
+        <!--О приложении-->
+        <scene sceneID="kDm-Wn-SXy">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="swb-tw-Nec" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="О приложении" image="About" id="geq-jb-Cld"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="KtL-GW-hmd">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="XnJ-aa-EfE" kind="relationship" relationship="rootViewController" id="IzG-eU-xbR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CWw-Vy-Jir" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1402" y="821"/>
+        </scene>
+        <!--Расписание-->
+        <scene sceneID="TId-nS-s1C">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="AYN-cN-eOg" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Расписание" image="Schedule" id="uRy-JP-72l"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5sM-LV-shJ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="axO-dq-1Dz" kind="relationship" relationship="rootViewController" id="tqO-KF-Qew"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Mp-OC-qfm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1402" y="167"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="About" width="32" height="32"/>
+        <image name="Schedule" width="32" height="32"/>
+    </resources>
 </document>
