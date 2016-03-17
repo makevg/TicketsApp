@@ -1,5 +1,5 @@
 //
-//  MESheduleService.h
+//  MEScheduleService.h
 //  TicketsApp
 //
 //  Created by Maximychev Evgeny on 16.03.16.
@@ -8,9 +8,9 @@
 
 #import "MEBaseService.h"
 
-#define Shedule_service [MESheduleService sharedInstance]
+#define Schedule_service [MEScheduleService sharedInstance]
 
-@interface MESheduleService : MEBaseService
+@interface MEScheduleService : MEBaseService
 
 + (instancetype)sharedInstance;
 - (NSArray *)citiesFrom;

@@ -1,21 +1,21 @@
 //
-//  MESheduleService.m
+//  MEScheduleService.m
 //  TicketsApp
 //
 //  Created by Maximychev Evgeny on 16.03.16.
 //  Copyright © 2016 Maximychev Evgeny. All rights reserved.
 //
 
-#import "MESheduleService.h"
+#import "MEScheduleService.h"
 #import "MECity.h"
 
-@implementation MESheduleService {
-    NSDictionary *sheduleData;
+@implementation MEScheduleService {
+    NSDictionary *scheduleData;
     NSArray<MECity *> *citiesFromArray;
     NSArray<MECity *> *citiesToArray;
 }
 
-#pragma mark - Singletone
+#pragma mark - Singleton
 
 + (instancetype)sharedInstance {
     static dispatch_once_t once;
@@ -32,9 +32,9 @@
 - (void)lazyLoad {
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"allStations"
                                                          ofType:@"json"];
-    sheduleData = [MEBaseService jsonDataFromFile:filePath];
-    citiesFromArray = [self loadCitiesFromArray:sheduleData[@"citiesFrom"]];
-    citiesToArray = [self loadCitiesFromArray:sheduleData[@"citiesTo"]];
+    scheduleData = [MEBaseService jsonDataFromFile:filePath];
+    citiesFromArray = [self loadCitiesFromArray:scheduleData[@"citiesFrom"]];
+    citiesToArray = [self loadCitiesFromArray:scheduleData[@"citiesTo"]];
 }
 
 - (NSArray<MECity *> *)loadCitiesFromArray:(NSArray *)array {
