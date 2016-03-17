@@ -45,10 +45,7 @@
     for (NSDictionary *cityDict in array) {
         MECity *city = [MECity new];
         city.countryTitle = cityDict[@"countryTitle"];
-        
-        NSDictionary *cityLocationDict = cityDict[@"point"];
-        city.point = [self cityLocationFromDictionary:cityLocationDict];
-        
+        city.point = [self locationFromDictionary:cityDict[@"point"]];
         city.districtTitle = cityDict[@"districtTitle"];
         city.cityId = cityDict[@"cityId"];
         city.cityTitle = cityDict[@"cityTitle"];
@@ -68,10 +65,7 @@
     for (NSDictionary *stationDict in array) {
         MEStation *station = [MEStation new];
         station.countryTitle = stationDict[@"countryTitle"];
-        
-        NSDictionary *stationLocationDict = stationDict[@"point"];
-        station.point = [self stationLocationFromDictionary:stationLocationDict];
-        
+        station.point = [self locationFromDictionary:stationDict[@"point"]];
         station.districtTitle = stationDict[@"districtTitle"];
         station.cityId = stationDict[@"cityId"];
         station.cityTitle = stationDict[@"cityTitle"];
@@ -84,22 +78,13 @@
     return stations;
 }
 
-- (MECityLocation *)cityLocationFromDictionary:(NSDictionary *)dictionary {
+- (MELocation *)locationFromDictionary:(NSDictionary *)dictionary {
     if (!dictionary) return nil;
     
     NSNumber *longitude = dictionary[@"longitude"];
     NSNumber *latitude = dictionary[@"latitude"];
-    return [[MECityLocation alloc] initWithLongitude:longitude.doubleValue
-                                            latitude:latitude.doubleValue];
-}
-
-- (MEStationLocation *)stationLocationFromDictionary:(NSDictionary *)dictionary {
-    if (!dictionary) return nil;
-    
-    NSNumber *longitude = dictionary[@"longitude"];
-    NSNumber *latitude = dictionary[@"latitude"];
-    return [[MEStationLocation alloc] initWithLongitude:longitude.doubleValue
-                                               latitude:latitude.doubleValue];
+    return [[MELocation alloc] initWithLongitude:longitude.doubleValue
+                                        latitude:latitude.doubleValue];
 }
 
 #pragma mark - Public

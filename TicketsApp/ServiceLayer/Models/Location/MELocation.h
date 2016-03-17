@@ -1,14 +1,14 @@
 //
-//  MECityLocation.h
+//  MELocation.h
 //  TicketsApp
 //
-//  Created by Maximychev Evgeny on 16.03.16.
+//  Created by Максимычев Е.О. on 17.03.16.
 //  Copyright © 2016 Maximychev Evgeny. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
-@interface MECityLocation : NSObject
+@interface MELocation : NSObject
 
 @property (nonatomic) double longitude;
 @property (nonatomic) double latitude;

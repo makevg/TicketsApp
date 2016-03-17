@@ -1,14 +1,14 @@
 //
-//  MECityLocation.m
+//  MELocation.m
 //  TicketsApp
 //
-//  Created by Maximychev Evgeny on 16.03.16.
+//  Created by Максимычев Е.О. on 17.03.16.
 //  Copyright © 2016 Maximychev Evgeny. All rights reserved.
 //
 
-#import "MECityLocation.h"
+#import "MELocation.h"
 
-@implementation MECityLocation
+@implementation MELocation
 
 #pragma mark - Init
 

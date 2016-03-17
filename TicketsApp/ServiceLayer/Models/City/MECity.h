@@ -7,13 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "MECityLocation.h"
+#import "MELocation.h"
 #import "MEStation.h"
 
 @interface MECity : NSObject
 
 @property (nonatomic) NSString *countryTitle;
-@property (nonatomic) MECityLocation *point;
+@property (nonatomic) MELocation *point;
 @property (nonatomic) NSString *districtTitle;
 @property (nonatomic) NSNumber *cityId;
 @property (nonatomic) NSString *cityTitle;
