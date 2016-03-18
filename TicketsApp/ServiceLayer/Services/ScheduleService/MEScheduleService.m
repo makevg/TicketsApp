@@ -97,4 +97,13 @@
     return citiesToArray;
 }
 
+- (NSArray *)citiesDataByStationsType:(MEStationsType)type {
+    switch (type) {
+        case MEStationsTypeFrom:
+            return [Schedule_service citiesFrom];
+        case MEStationsTypeTo:
+            return [Schedule_service citiesTo];
+    }
+}
+
 @end

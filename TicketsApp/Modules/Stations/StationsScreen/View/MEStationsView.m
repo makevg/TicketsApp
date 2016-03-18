@@ -13,7 +13,15 @@
 #pragma mark - Setup
 
 - (void)setup {
+    [self configureTableView];
+}
+
+#pragma mark - Private
+
+- (void)configureTableView {
     self.tableView.tableFooterView = [UIView new];
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+    self.tableView.estimatedRowHeight = 44.f;
 }
 
 @end

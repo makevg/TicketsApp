@@ -34,7 +34,24 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="645-bu-CeR" id="6GY-NE-zqA">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="station name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C1N-Tp-QKI">
+                                                    <rect key="frame" x="8" y="11" width="584" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="C1N-Tp-QKI" firstAttribute="top" secondItem="6GY-NE-zqA" secondAttribute="top" constant="11" id="8jo-jz-8Vp"/>
+                                                <constraint firstAttribute="bottom" secondItem="C1N-Tp-QKI" secondAttribute="bottom" constant="11" id="JFq-ql-Xah"/>
+                                                <constraint firstAttribute="trailing" secondItem="C1N-Tp-QKI" secondAttribute="trailing" constant="8" id="oMI-p6-8BT"/>
+                                                <constraint firstItem="C1N-Tp-QKI" firstAttribute="leading" secondItem="6GY-NE-zqA" secondAttribute="leading" constant="8" id="xHS-K6-cZK"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="stationNameLabel" destination="C1N-Tp-QKI" id="Fal-Xl-Jav"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

@@ -7,11 +7,7 @@
 //
 
 #import "MEBaseVC.h"
-
-typedef NS_ENUM(NSUInteger, MEStationsType) {
-    MEStationsTypeFrom = 0,
-    MEStationsTypeTo
-};
+#import "MEScheduleService.h"
 
 @interface MEStationsVC : MEBaseVC
 

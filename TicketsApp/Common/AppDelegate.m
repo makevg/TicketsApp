@@ -27,7 +27,7 @@
     [[UINavigationBar appearance] setBarTintColor:[MEStyle blueColor]];
     [[UINavigationBar appearance] setTintColor:[MEStyle whiteColor]];
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[MEStyle whiteColor],
-                                                           NSFontAttributeName:[MEStyle defaultFontOfSize:16.f]}];
+                                                           NSFontAttributeName:[MEStyle defaultFontOfSize:18.f]}];
     [[UINavigationBar appearance] setBackgroundImage:[[UIImage alloc] init]
                                       forBarPosition:UIBarPositionAny
                                           barMetrics:UIBarMetricsDefault];

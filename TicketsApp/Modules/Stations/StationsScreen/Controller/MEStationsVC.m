@@ -9,7 +9,6 @@
 #import "MEStationsVC.h"
 #import "MEStationsView.h"
 #import "MEStationCell.h"
-#import "MEScheduleService.h"
 #import "MECity.h"
 
 NSString *const cStationsVCStoryboardName = @"Stations";
@@ -31,7 +30,7 @@ NSString *const cStationsVCStoryboardName = @"Stations";
 #pragma mark - Configure
 
 - (void)configureController {
-    data = [self dataByStationsType:self.stationsType];
+    data = [Schedule_service citiesDataByStationsType:self.stationsType];
     [self setDataSourceAndDelegate];
 }
 
@@ -40,15 +39,6 @@ NSString *const cStationsVCStoryboardName = @"Stations";
 - (void)setDataSourceAndDelegate {
     self.contentView.tableView.dataSource = self;
     self.contentView.tableView.delegate = self;
-}
-
-- (NSArray *)dataByStationsType:(MEStationsType)type {
-    switch (type) {
-        case MEStationsTypeFrom:
-            return [Schedule_service citiesFrom];
-        case MEStationsTypeTo:
-            return [Schedule_service citiesTo];
-    }
 }
 
 #pragma mark - Actions
@@ -74,7 +64,7 @@ NSString *const cStationsVCStoryboardName = @"Stations";
                                                           forIndexPath:indexPath];
     MECity *city = data[indexPath.section];
     MEStation *station = city.stations[indexPath.row];
-    cell.textLabel.text = station.stationTitle;
+    [cell setModel:station];
     return cell;
 }
 

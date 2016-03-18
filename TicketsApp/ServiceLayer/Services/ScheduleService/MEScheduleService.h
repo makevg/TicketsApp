@@ -10,10 +10,16 @@
 
 #define Schedule_service [MEScheduleService sharedInstance]
 
+typedef NS_ENUM(NSUInteger, MEStationsType) {
+    MEStationsTypeFrom = 0,
+    MEStationsTypeTo
+};
+
 @interface MEScheduleService : MEBaseService
 
 + (instancetype)sharedInstance;
 - (NSArray *)citiesFrom;
 - (NSArray *)citiesTo;
+- (NSArray *)citiesDataByStationsType:(MEStationsType)type;
 
 @end
