@@ -40,6 +40,8 @@
 		81A08E8F1C9C09AF00C0467E /* MEDatePickerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 81A08E8E1C9C09AF00C0467E /* MEDatePickerVC.m */; };
 		81A08E911C9C09CC00C0467E /* DatePicker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81A08E901C9C09CC00C0467E /* DatePicker.storyboard */; };
 		81A08E971C9C1FE400C0467E /* MEDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 81A08E961C9C1FE400C0467E /* MEDatePickerView.m */; };
+		81A08E9C1C9C32B300C0467E /* MEBaseButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 81A08E9B1C9C32B300C0467E /* MEBaseButton.m */; };
+		81A08EA01C9C334500C0467E /* MERoundedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 81A08E9F1C9C334500C0467E /* MERoundedButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,6 +124,10 @@
 		81A08E901C9C09CC00C0467E /* DatePicker.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DatePicker.storyboard; sourceTree = "<group>"; };
 		81A08E951C9C1FE400C0467E /* MEDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEDatePickerView.h; sourceTree = "<group>"; };
 		81A08E961C9C1FE400C0467E /* MEDatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MEDatePickerView.m; sourceTree = "<group>"; };
+		81A08E9A1C9C32B300C0467E /* MEBaseButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEBaseButton.h; sourceTree = "<group>"; };
+		81A08E9B1C9C32B300C0467E /* MEBaseButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MEBaseButton.m; sourceTree = "<group>"; };
+		81A08E9E1C9C334500C0467E /* MERoundedButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MERoundedButton.h; sourceTree = "<group>"; };
+		81A08E9F1C9C334500C0467E /* MERoundedButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MERoundedButton.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -364,6 +370,7 @@
 		8104AF5C1C9ADCEF00D00239 /* CommonUi */ = {
 			isa = PBXGroup;
 			children = (
+				81A08E981C9C326D00C0467E /* Button */,
 				8104AF671C9AE08D00D00239 /* Cells */,
 				8104AF5E1C9ADD1200D00239 /* Controllers */,
 				8104AF5D1C9ADD0200D00239 /* Views */,
@@ -553,6 +560,33 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		81A08E981C9C326D00C0467E /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				81A08E991C9C327D00C0467E /* BaseButton */,
+				81A08E9D1C9C332400C0467E /* RoundedButton */,
+			);
+			path = Button;
+			sourceTree = "<group>";
+		};
+		81A08E991C9C327D00C0467E /* BaseButton */ = {
+			isa = PBXGroup;
+			children = (
+				81A08E9A1C9C32B300C0467E /* MEBaseButton.h */,
+				81A08E9B1C9C32B300C0467E /* MEBaseButton.m */,
+			);
+			path = BaseButton;
+			sourceTree = "<group>";
+		};
+		81A08E9D1C9C332400C0467E /* RoundedButton */ = {
+			isa = PBXGroup;
+			children = (
+				81A08E9E1C9C334500C0467E /* MERoundedButton.h */,
+				81A08E9F1C9C334500C0467E /* MERoundedButton.m */,
+			);
+			path = RoundedButton;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -689,6 +723,7 @@
 			files = (
 				8104AF4B1C9AC87200D00239 /* MELocation.m in Sources */,
 				8104AF581C9AD91400D00239 /* MEAboutVC.m in Sources */,
+				81A08E9C1C9C32B300C0467E /* MEBaseButton.m in Sources */,
 				146A39B21C99E4F80068FDD7 /* MECity.m in Sources */,
 				81A08E861C9BED6A00C0467E /* MEInputStationView.m in Sources */,
 				8104AF751C9AE96800D00239 /* MEStationsVC.m in Sources */,
@@ -705,6 +740,7 @@
 				8104AF801C9AF3D600D00239 /* MEScheduleVC.m in Sources */,
 				146A39A81C99DA800068FDD7 /* MEScheduleService.m in Sources */,
 				81A08E7F1C9BDBEE00C0467E /* MEStationVC.m in Sources */,
+				81A08EA01C9C334500C0467E /* MERoundedButton.m in Sources */,
 				81A08E8B1C9BFA3900C0467E /* MEScheduleView.m in Sources */,
 				8104AF781C9AE99700D00239 /* MEStationsView.m in Sources */,
 				81A08E821C9BDC0400C0467E /* MEStationView.m in Sources */,

@@ -117,6 +117,17 @@
                                             <outletCollection property="gestureRecognizers" destination="nf7-3U-gjP" appends="YES" id="X8y-ec-FdT"/>
                                         </connections>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K7v-qv-yx5" customClass="MERoundedButton">
+                                        <rect key="frame" x="255" y="135" width="90" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="90" id="6tx-w1-9yo"/>
+                                            <constraint firstAttribute="height" constant="30" id="g5e-bL-UIM"/>
+                                        </constraints>
+                                        <state key="normal" title="Buy"/>
+                                        <connections>
+                                            <action selector="tappedBuyButton:" destination="axO-dq-1Dz" eventType="touchUpInside" id="sdX-Pp-fsT"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -126,10 +137,12 @@
                                     <constraint firstItem="SnN-gZ-8Be" firstAttribute="top" secondItem="1bH-rW-h4B" secondAttribute="top" constant="8" id="77w-EP-5JD"/>
                                     <constraint firstItem="PmA-FM-cat" firstAttribute="top" secondItem="SnN-gZ-8Be" secondAttribute="bottom" constant="16" id="DfF-K2-ct6"/>
                                     <constraint firstItem="SnN-gZ-8Be" firstAttribute="leading" secondItem="FRw-Yl-ylv" secondAttribute="trailing" id="HRr-rm-jq6"/>
+                                    <constraint firstItem="K7v-qv-yx5" firstAttribute="top" secondItem="yJr-Ig-Wa1" secondAttribute="bottom" constant="16" id="PNV-EC-Xn9"/>
                                     <constraint firstItem="PmA-FM-cat" firstAttribute="leading" secondItem="ah1-hU-S8H" secondAttribute="trailing" id="Tzn-yS-bBA"/>
                                     <constraint firstItem="ah1-hU-S8H" firstAttribute="leading" secondItem="1bH-rW-h4B" secondAttribute="leading" constant="8" id="XW9-3u-FA8"/>
                                     <constraint firstItem="yJr-Ig-Wa1" firstAttribute="centerY" secondItem="PeI-op-CDq" secondAttribute="centerY" id="a4D-Bx-qBD"/>
                                     <constraint firstAttribute="trailing" secondItem="yJr-Ig-Wa1" secondAttribute="trailing" constant="8" id="bBB-R1-GP3"/>
+                                    <constraint firstItem="K7v-qv-yx5" firstAttribute="centerX" secondItem="1bH-rW-h4B" secondAttribute="centerX" id="cQh-NQ-Fhf"/>
                                     <constraint firstItem="FRw-Yl-ylv" firstAttribute="leading" secondItem="1bH-rW-h4B" secondAttribute="leading" constant="8" id="erK-a2-rDe"/>
                                     <constraint firstItem="FRw-Yl-ylv" firstAttribute="centerY" secondItem="SnN-gZ-8Be" secondAttribute="centerY" id="h3n-Yi-wU8"/>
                                     <constraint firstAttribute="trailing" secondItem="PmA-FM-cat" secondAttribute="trailing" constant="16" id="iqS-i5-WIm"/>

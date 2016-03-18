@@ -12,12 +12,17 @@
 #import "MEStation.h"
 #import "MEInputStationView.h"
 #import "MEDatePickerVC.h"
+#import "MEUtilsService.h"
 
 @interface MEScheduleVC () <MEStationsVCDelegate, MEInputStationViewDelegate, MEDatePickerVCDelegate>
 @property (strong, nonatomic) IBOutlet MEScheduleView *contentView;
 @end
 
-@implementation MEScheduleVC
+@implementation MEScheduleVC {
+    MEStation *stationFrom;
+    MEStation *stationTo;
+    NSDate *selectedDate;
+}
 
 #pragma mark - Configure
 
@@ -43,10 +48,24 @@
     [self presentViewController:vc animated:NO completion:nil];
 }
 
+- (void)checkFields {
+    if (stationFrom && stationTo && selectedDate) {
+        NSString *successMessage =
+        [NSString stringWithFormat:@"From: %@, To: %@ at %@", stationFrom.stationTitle, stationTo.stationTitle, [MEUtilsService stringByDate:selectedDate]];
+        [self showAlertWithTitle:@"Success" message:successMessage];
+    } else {
+        [self showAlertWithTitle:@"Error" message:@"Fill fields"];
+    }
+}
+
 #pragma mark - Actions
 
 - (IBAction)tappedDateLabel:(id)sender {
     [self showDatePicker];
+}
+
+- (IBAction)tappedBuyButton:(id)sender {
+    [self checkFields];
 }
 
 #pragma mark - MEInputStationViewDelegate
@@ -66,18 +85,23 @@
 
 - (void)controller:(MEStationsVC *)controller selectSation:(MEStation *)station {
     switch (controller.stationsType) {
-        case MEStationsTypeFrom:
+        case MEStationsTypeFrom: {
+            stationFrom = station;
             [self.contentView.stationFromView setStationTitle:station.stationTitle];
             break;
-        case MEStationsTypeTo:
+        }
+        case MEStationsTypeTo: {
+            stationTo = station;
             [self.contentView.stationToView setStationTitle:station.stationTitle];
             break;
+        }
     }
 }
 
 #pragma mark - MEDatePickerVCDelegate
 
 - (void)pickerController:(MEDatePickerVC *)controller selectDate:(NSDate *)date {
+    selectedDate = date;
     [self.contentView setSelectedDate:date];
 }
 

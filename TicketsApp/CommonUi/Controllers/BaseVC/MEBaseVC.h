@@ -18,6 +18,6 @@
 - (UIViewController *)loadControllerFromStoryboard:(NSString *)storyboardName;
 - (UIViewController *)loadControllerFromStoryboard:(NSString *)storyboardName
                                       byIdentifier:(NSString *)identifier;
-- (void)showAlertWithMessage:(NSString *)message;
+- (void)showAlertWithTitle:(NSString *)title message:(NSString *)message;
 
 @end
