@@ -13,10 +13,11 @@
 + (NSString *)storyboardName;
 + (NSString *)identifier;
 + (UIView *)loadViewByNibName:(NSString *)nibName;
+
+- (void)configureController;
 - (UIViewController *)loadControllerFromStoryboard:(NSString *)storyboardName;
 - (UIViewController *)loadControllerFromStoryboard:(NSString *)storyboardName
                                       byIdentifier:(NSString *)identifier;
-
-- (void)configureController;
+- (void)showAlertWithMessage:(NSString *)message;
 
 @end

@@ -15,6 +15,7 @@
 + (UIColor *)blueColor;
 + (UIColor *)whiteColor;
 + (UIColor *)grayColor;
++ (UIColor *)lightGrayColor;
 
 // Fonts
 + (UIFont *)defaultFontOfSize:(CGFloat)size;

@@ -16,6 +16,6 @@
 @property (nonatomic) NSString *copyright;
 
 + (instancetype)sharedInstance;
-
++ (NSString *)stringByDate:(NSDate *)date;
 
 @end

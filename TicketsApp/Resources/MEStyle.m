@@ -29,6 +29,10 @@ NSString *const BoldFontName = @"HelveticaNeue-Bold";
     return RGB(103, 105, 109);
 }
 
++ (UIColor *)lightGrayColor {
+    return RGB(220, 220, 220);
+}
+
 // Fonts
 
 + (UIFont *)defaultFontOfSize:(CGFloat)size {

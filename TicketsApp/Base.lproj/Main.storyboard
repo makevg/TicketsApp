@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <scenes>
-        <!--О приложении-->
+        <!--About-->
         <scene sceneID="1Sa-ef-axj">
             <objects>
                 <viewController id="XnJ-aa-EfE" customClass="MEAboutVC" sceneMemberID="viewController">
@@ -42,7 +42,7 @@
                             <outlet property="copyrightLabel" destination="gnL-oq-8il" id="Te3-iI-5kT"/>
                         </connections>
                     </view>
-                    <navigationItem key="navigationItem" title="О приложении" id="Rvn-Fg-wbP"/>
+                    <navigationItem key="navigationItem" title="About" id="Rvn-Fg-wbP"/>
                     <connections>
                         <outlet property="contentView" destination="O0Y-Kr-xHF" id="2Nv-vp-1pI"/>
                     </connections>
@@ -51,7 +51,7 @@
             </objects>
             <point key="canvasLocation" x="2076" y="821"/>
         </scene>
-        <!--Расписание-->
+        <!--Schedule-->
         <scene sceneID="vrV-IL-3wy">
             <objects>
                 <viewController id="axO-dq-1Dz" customClass="MEScheduleVC" sceneMemberID="viewController">
@@ -59,60 +59,100 @@
                         <viewControllerLayoutGuide type="top" id="CL3-RD-48s"/>
                         <viewControllerLayoutGuide type="bottom" id="HTB-b5-iDj"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="1m6-v9-b6r">
+                    <view key="view" contentMode="scaleToFill" id="1m6-v9-b6r" customClass="MEScheduleView">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4VY-08-8We">
-                                <rect key="frame" x="16" y="80" width="56" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="From:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FRw-Yl-ylv">
+                                <rect key="frame" x="8" y="84" width="44" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="56" id="uYN-aq-qwC"/>
+                                    <constraint firstAttribute="width" constant="44" id="Qrf-Cy-XkE"/>
                                 </constraints>
-                                <state key="normal" title="Откуда:"/>
-                                <connections>
-                                    <action selector="tappedFromButton:" destination="axO-dq-1Dz" eventType="touchUpInside" id="PPM-FB-JHK"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="выберите станцию" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J2U-Z0-2tR">
-                                <rect key="frame" x="80" y="86" width="512" height="18"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gsQ-X1-97S">
-                                <rect key="frame" x="16" y="126" width="39" height="30"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SnN-gZ-8Be" customClass="MEInputStationView">
+                                <rect key="frame" x="52" y="80" width="532" height="30"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="39" id="xgg-sr-KJY"/>
+                                    <constraint firstAttribute="height" constant="30" id="3ev-Hk-LiX"/>
                                 </constraints>
-                                <state key="normal" title="Куда:"/>
-                                <connections>
-                                    <action selector="tappedToButton:" destination="axO-dq-1Dz" eventType="touchUpInside" id="igw-k0-SyS"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="выберите станцию" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AID-KO-SpE">
-                                <rect key="frame" x="63" y="132" width="529" height="18"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ah1-hU-S8H">
+                                <rect key="frame" x="8" y="130" width="44" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="IeC-F6-8fw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PmA-FM-cat" customClass="MEInputStationView">
+                                <rect key="frame" x="52" y="126" width="532" height="30"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="EY7-s8-FGw"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PeI-op-CDq">
+                                <rect key="frame" x="8" y="170" width="44" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="cli-Gb-bEX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yJr-Ig-Wa1">
+                                <rect key="frame" x="52" y="170" width="540" height="21"/>
+                                <gestureRecognizers/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="nf7-3U-gjP" appends="YES" id="X8y-ec-FdT"/>
+                                </connections>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="4VY-08-8We" firstAttribute="leading" secondItem="1m6-v9-b6r" secondAttribute="leading" constant="16" id="5jq-52-js1"/>
-                            <constraint firstItem="4VY-08-8We" firstAttribute="top" secondItem="CL3-RD-48s" secondAttribute="bottom" constant="16" id="Bdh-QZ-JW8"/>
-                            <constraint firstItem="J2U-Z0-2tR" firstAttribute="leading" secondItem="4VY-08-8We" secondAttribute="trailing" constant="8" id="LCS-Fl-qap"/>
-                            <constraint firstItem="J2U-Z0-2tR" firstAttribute="centerY" secondItem="4VY-08-8We" secondAttribute="centerY" id="M4b-ty-dNy"/>
-                            <constraint firstItem="gsQ-X1-97S" firstAttribute="top" secondItem="4VY-08-8We" secondAttribute="bottom" constant="16" id="Vln-26-VcS"/>
-                            <constraint firstItem="gsQ-X1-97S" firstAttribute="leading" secondItem="1m6-v9-b6r" secondAttribute="leading" constant="16" id="XBX-su-34t"/>
-                            <constraint firstAttribute="trailing" secondItem="AID-KO-SpE" secondAttribute="trailing" constant="8" id="bgM-8W-s27"/>
-                            <constraint firstItem="AID-KO-SpE" firstAttribute="centerY" secondItem="gsQ-X1-97S" secondAttribute="centerY" id="e8b-hH-yMd"/>
-                            <constraint firstItem="AID-KO-SpE" firstAttribute="leading" secondItem="gsQ-X1-97S" secondAttribute="trailing" constant="8" id="nAW-Rh-BCb"/>
-                            <constraint firstAttribute="trailing" secondItem="J2U-Z0-2tR" secondAttribute="trailing" constant="8" id="sP0-YO-0Y2"/>
+                            <constraint firstItem="PeI-op-CDq" firstAttribute="leading" secondItem="1m6-v9-b6r" secondAttribute="leading" constant="8" id="6tv-R5-z8R"/>
+                            <constraint firstItem="yJr-Ig-Wa1" firstAttribute="centerY" secondItem="PeI-op-CDq" secondAttribute="centerY" id="96Z-KF-Dg0"/>
+                            <constraint firstItem="PmA-FM-cat" firstAttribute="leading" secondItem="ah1-hU-S8H" secondAttribute="trailing" id="99J-ky-i9L"/>
+                            <constraint firstItem="FRw-Yl-ylv" firstAttribute="leading" secondItem="1m6-v9-b6r" secondAttribute="leading" constant="8" id="DLa-KC-kqt"/>
+                            <constraint firstItem="ah1-hU-S8H" firstAttribute="centerY" secondItem="PmA-FM-cat" secondAttribute="centerY" id="LlP-hU-MGR"/>
+                            <constraint firstItem="yJr-Ig-Wa1" firstAttribute="leading" secondItem="PeI-op-CDq" secondAttribute="trailing" id="OgU-ix-8oL"/>
+                            <constraint firstAttribute="trailing" secondItem="SnN-gZ-8Be" secondAttribute="trailing" constant="16" id="Qij-fd-kiA"/>
+                            <constraint firstItem="SnN-gZ-8Be" firstAttribute="leading" secondItem="FRw-Yl-ylv" secondAttribute="trailing" id="RFx-kE-MHW"/>
+                            <constraint firstItem="SnN-gZ-8Be" firstAttribute="top" secondItem="CL3-RD-48s" secondAttribute="bottom" constant="16" id="SqY-aA-bh4"/>
+                            <constraint firstItem="PmA-FM-cat" firstAttribute="top" secondItem="SnN-gZ-8Be" secondAttribute="bottom" constant="16" id="T2E-e2-1Ck"/>
+                            <constraint firstAttribute="trailing" secondItem="PmA-FM-cat" secondAttribute="trailing" constant="16" id="ad7-4D-Vlt"/>
+                            <constraint firstAttribute="trailing" secondItem="yJr-Ig-Wa1" secondAttribute="trailing" constant="8" id="crA-2g-eRB"/>
+                            <constraint firstItem="PeI-op-CDq" firstAttribute="top" secondItem="PmA-FM-cat" secondAttribute="bottom" constant="14" id="dRj-9U-ptv"/>
+                            <constraint firstItem="ah1-hU-S8H" firstAttribute="leading" secondItem="1m6-v9-b6r" secondAttribute="leading" constant="8" id="o81-mr-CHH"/>
+                            <constraint firstItem="FRw-Yl-ylv" firstAttribute="centerY" secondItem="SnN-gZ-8Be" secondAttribute="centerY" id="ueq-F4-hK8"/>
                         </constraints>
+                        <connections>
+                            <outlet property="dateLabel" destination="PeI-op-CDq" id="elb-3m-3De"/>
+                            <outlet property="dateValueLabel" destination="yJr-Ig-Wa1" id="5Px-Th-4p6"/>
+                            <outlet property="fromLabel" destination="FRw-Yl-ylv" id="Ih8-ZK-zmV"/>
+                            <outlet property="stationFromView" destination="SnN-gZ-8Be" id="zPo-31-PyT"/>
+                            <outlet property="stationToView" destination="PmA-FM-cat" id="gTs-cn-VaQ"/>
+                            <outlet property="toLabel" destination="ah1-hU-S8H" id="MKZ-Cq-fPj"/>
+                        </connections>
                     </view>
-                    <navigationItem key="navigationItem" title="Расписание" id="YrV-o8-DBL"/>
+                    <navigationItem key="navigationItem" title="Schedule" id="YrV-o8-DBL"/>
+                    <connections>
+                        <outlet property="contentView" destination="1m6-v9-b6r" id="FrP-q0-6OO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S7Z-Vl-HeC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="nf7-3U-gjP">
+                    <connections>
+                        <action selector="tappedDateLabel:" destination="axO-dq-1Dz" id="GrP-cO-MSs"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2076" y="167"/>
         </scene>
@@ -134,11 +174,11 @@
             </objects>
             <point key="canvasLocation" x="689" y="475"/>
         </scene>
-        <!--О приложении-->
+        <!--About-->
         <scene sceneID="kDm-Wn-SXy">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="swb-tw-Nec" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="О приложении" image="About" id="geq-jb-Cld"/>
+                    <tabBarItem key="tabBarItem" title="About" image="About" id="geq-jb-Cld"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="KtL-GW-hmd">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -153,11 +193,11 @@
             </objects>
             <point key="canvasLocation" x="1402" y="821"/>
         </scene>
-        <!--Расписание-->
+        <!--Schedule-->
         <scene sceneID="TId-nS-s1C">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="AYN-cN-eOg" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Расписание" image="Schedule" id="uRy-JP-72l"/>
+                    <tabBarItem key="tabBarItem" title="Schedule" image="Schedule" id="uRy-JP-72l"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="5sM-LV-shJ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

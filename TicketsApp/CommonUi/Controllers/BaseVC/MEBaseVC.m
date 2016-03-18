@@ -44,6 +44,10 @@
     return (UIView *)[viewNib firstObject];
 }
 
+- (void)configureController {
+    // Abstract method.
+}
+
 - (UIViewController *)loadControllerFromStoryboard:(NSString *)storyboardName {
     UIStoryboard *sb = [UIStoryboard storyboardWithName:storyboardName bundle:nil];
     UIViewController *vc = [sb instantiateInitialViewController];
@@ -56,8 +60,15 @@
     return vc;
 }
 
-- (void)configureController {
-    // Abstract method.
+- (void)showAlertWithMessage:(NSString *)message {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil
+                                                                   message:message
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK"
+                                                       style:UIAlertActionStyleDefault
+                                                     handler:nil];
+    [alert addAction:okAction];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 @end

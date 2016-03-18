@@ -10,8 +10,10 @@
 #import "MEStationsView.h"
 #import "MEStationCell.h"
 #import "MECity.h"
+#import "MEStationVC.h"
 
 NSString *const cStationsVCStoryboardName = @"Stations";
+NSString *const cStationSegueIdentifier = @"toShowStation";
 
 @interface MEStationsVC () <UITableViewDataSource, UITableViewDelegate>
 @property (strong, nonatomic) IBOutlet MEStationsView *contentView;
@@ -19,6 +21,15 @@ NSString *const cStationsVCStoryboardName = @"Stations";
 
 @implementation MEStationsVC {
     NSArray<MECity *> *data;
+    MEStationVC *destinationVC;
+    MEStation *selectedStation;
+}
+
+#pragma mark - Lifecycle
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self prepareNavItem];
 }
 
 #pragma mark - Public
@@ -39,6 +50,18 @@ NSString *const cStationsVCStoryboardName = @"Stations";
 - (void)setDataSourceAndDelegate {
     self.contentView.tableView.dataSource = self;
     self.contentView.tableView.delegate = self;
+}
+
+- (void)prepareNavItem {
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@""
+                                                                             style:UIBarButtonItemStylePlain
+                                                                            target:nil
+                                                                            action:nil];
+}
+
+- (MEStation *)stationAtIndexPath:(NSIndexPath *)indexPath {
+    MECity *city = data[indexPath.section];
+    return city.stations[indexPath.row];
 }
 
 #pragma mark - Actions
@@ -62,9 +85,7 @@ NSString *const cStationsVCStoryboardName = @"Stations";
     NSString *identifier = [MEStationCell cellIdentifier];
     MEStationCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier
                                                           forIndexPath:indexPath];
-    MECity *city = data[indexPath.section];
-    MEStation *station = city.stations[indexPath.row];
-    [cell setModel:station];
+    [cell setModel:[self stationAtIndexPath:indexPath]];
     return cell;
 }
 
@@ -86,6 +107,25 @@ NSString *const cStationsVCStoryboardName = @"Stations";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if (self.delegate) {
+        [self.delegate controller:self
+                     selectSation:[self stationAtIndexPath:indexPath]];
+    }
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
+    selectedStation = [self stationAtIndexPath:indexPath];
+    [self performSegueWithIdentifier:cStationSegueIdentifier sender:self];
+}
+
+#pragma mark - Navigation
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:cStationSegueIdentifier]) {
+        destinationVC = segue.destinationViewController;
+        destinationVC.station = selectedStation;
+    }
 }
 
 @end

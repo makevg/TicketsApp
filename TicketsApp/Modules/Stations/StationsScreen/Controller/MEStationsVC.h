@@ -9,8 +9,18 @@
 #import "MEBaseVC.h"
 #import "MEScheduleService.h"
 
+@class MEStation;
+@protocol MEStationsVCDelegate;
+
 @interface MEStationsVC : MEBaseVC
 
 @property (nonatomic) MEStationsType stationsType;
+@property (weak, nonatomic) id<MEStationsVCDelegate> delegate;
+
+@end
+
+@protocol MEStationsVCDelegate <NSObject>
+
+- (void)controller:(MEStationsVC *)controller selectSation:(MEStation *)station;
 
 @end

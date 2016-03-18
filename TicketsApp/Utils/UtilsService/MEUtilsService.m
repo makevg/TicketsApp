@@ -8,6 +8,8 @@
 
 #import "MEUtilsService.h"
 
+NSString *const cDateFormatDefault  = @"dd.MM.yyyy";
+
 @implementation MEUtilsService
 
 #pragma mark - Singleton
@@ -20,6 +22,18 @@
         [sharedInstance lazyLoad];
     });
     return sharedInstance;
+}
+
++ (NSDateFormatter *)dateFormatterWithFormat:(NSString *)format {
+    NSDateFormatter *dateFormatter = [NSDateFormatter new];
+    [dateFormatter setDateFormat:format];
+    [dateFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"ru_RU"]];
+    return dateFormatter;
+}
+
++ (NSString *)stringByDate:(NSDate *)date {
+    NSDateFormatter *dateFormatter = [self dateFormatterWithFormat:cDateFormatDefault];
+    return [dateFormatter stringFromDate:date];
 }
 
 #pragma mark - Lazy init
