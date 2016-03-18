@@ -106,4 +106,13 @@
     }
 }
 
+- (NSArray *)allStationsByStationsType:(MEStationsType)type {
+    NSMutableArray *stations = [NSMutableArray array];
+    NSArray *cities = [self citiesDataByStationsType:type];
+    for (MECity *city in cities) {
+        [stations addObjectsFromArray:city.stations];
+    }
+    return stations;
+}
+
 @end

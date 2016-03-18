@@ -51,7 +51,7 @@
 - (void)checkFields {
     if (stationFrom && stationTo && selectedDate) {
         NSString *successMessage =
-        [NSString stringWithFormat:@"From: %@, To: %@ at %@", stationFrom.stationTitle, stationTo.stationTitle, [MEUtilsService stringByDate:selectedDate]];
+        [NSString stringWithFormat:@"From: %@ To: %@ at %@", stationFrom.stationTitle, stationTo.stationTitle, [MEUtilsService stringByDate:selectedDate]];
         [self showAlertWithTitle:@"Success" message:successMessage];
     } else {
         [self showAlertWithTitle:@"Error" message:@"Fill fields"];

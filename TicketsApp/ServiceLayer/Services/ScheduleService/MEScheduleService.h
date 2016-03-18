@@ -21,5 +21,6 @@ typedef NS_ENUM(NSUInteger, MEStationsType) {
 - (NSArray *)citiesFrom;
 - (NSArray *)citiesTo;
 - (NSArray *)citiesDataByStationsType:(MEStationsType)type;
+- (NSArray *)allStationsByStationsType:(MEStationsType)type;
 
 @end

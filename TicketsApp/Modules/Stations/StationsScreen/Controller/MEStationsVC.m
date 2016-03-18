@@ -15,12 +15,15 @@
 NSString *const cStationsVCStoryboardName = @"Stations";
 NSString *const cStationSegueIdentifier = @"toShowStation";
 
-@interface MEStationsVC () <UITableViewDataSource, UITableViewDelegate>
+@interface MEStationsVC () <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UISearchResultsUpdating>
 @property (strong, nonatomic) IBOutlet MEStationsView *contentView;
+@property (nonatomic) UISearchController *searchController;
 @end
 
 @implementation MEStationsVC {
     NSArray<MECity *> *data;
+    NSArray<MEStation *> *allStations;
+    NSMutableArray<MEStation *> *searchResults;
     MEStationVC *destinationVC;
     MEStation *selectedStation;
 }
@@ -32,6 +35,10 @@ NSString *const cStationSegueIdentifier = @"toShowStation";
     [self prepareNavItem];
 }
 
+- (void)dealloc {
+    [self.searchController.view removeFromSuperview];
+}
+
 #pragma mark - Public
 
 + (NSString *)storyboardName {
@@ -41,7 +48,8 @@ NSString *const cStationSegueIdentifier = @"toShowStation";
 #pragma mark - Configure
 
 - (void)configureController {
-    data = [Schedule_service citiesDataByStationsType:self.stationsType];
+    [self prepareData];
+    [self prepareSearchController];
     [self setDataSourceAndDelegate];
 }
 
@@ -52,6 +60,18 @@ NSString *const cStationSegueIdentifier = @"toShowStation";
     self.contentView.tableView.delegate = self;
 }
 
+- (void)prepareSearchController {
+    self.searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
+    self.searchController.searchResultsUpdater = self;
+    self.searchController.dimsBackgroundDuringPresentation = NO;
+    
+    self.searchController.searchBar.delegate = self;
+    self.contentView.tableView.tableHeaderView = self.searchController.searchBar;
+    
+    self.definesPresentationContext = YES;
+    [self.searchController.searchBar sizeToFit];
+}
+
 - (void)prepareNavItem {
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@""
                                                                              style:UIBarButtonItemStylePlain
@@ -59,9 +79,31 @@ NSString *const cStationSegueIdentifier = @"toShowStation";
                                                                             action:nil];
 }
 
+- (void)prepareData {
+    data = [Schedule_service citiesDataByStationsType:self.stationsType];
+    allStations = [Schedule_service allStationsByStationsType:self.stationsType];
+    searchResults = [NSMutableArray array];
+}
+
 - (MEStation *)stationAtIndexPath:(NSIndexPath *)indexPath {
-    MECity *city = data[indexPath.section];
-    return city.stations[indexPath.row];
+    if (self.searchController.isActive) {
+        return searchResults[indexPath.section];
+    } else {
+        MECity *city = data[indexPath.section];
+        return city.stations[indexPath.row];
+    }
+}
+
+- (void)searchForText:(NSString *)searchText {
+    [searchResults removeAllObjects];
+    for (MEStation *station in allStations) {
+        NSRange range = [station.stationTitle
+                         rangeOfString:searchText
+                         options:NSCaseInsensitiveSearch];
+        if (range.location != NSNotFound) {
+            [searchResults addObject:station];
+        }
+    }
 }
 
 #pragma mark - Actions
@@ -73,24 +115,29 @@ NSString *const cStationSegueIdentifier = @"toShowStation";
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return [data count];
+    return self.searchController.active ? 1 : [data count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    MECity *city = data[section];
-    return [city.stations count];
+    if (self.searchController.active) {
+        return [searchResults count];
+    } else {
+        MECity *city = data[section];
+        return [city.stations count];
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSString *identifier = [MEStationCell cellIdentifier];
     MEStationCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier
                                                           forIndexPath:indexPath];
-    [cell setModel:[self stationAtIndexPath:indexPath]];
+    MEStation *station = [self stationAtIndexPath:indexPath];
+    [cell setModel:station];
     return cell;
 }
 
 - (nullable NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return data[section].cityTitle;
+    return self.searchController.active ? nil : data[section].cityTitle;
 }
 
 #pragma mark - UITableViewDelegate
@@ -111,12 +158,25 @@ NSString *const cStationSegueIdentifier = @"toShowStation";
         [self.delegate controller:self
                      selectSation:[self stationAtIndexPath:indexPath]];
     }
-    [self dismissViewControllerAnimated:YES completion:nil];
+    
+    if (self.searchController.isActive) {
+        [self.navigationController dismissViewControllerAnimated:NO completion:nil];
+    } else {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
 }
 
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
     selectedStation = [self stationAtIndexPath:indexPath];
     [self performSegueWithIdentifier:cStationSegueIdentifier sender:self];
+}
+
+#pragma mark - UISearchResultsUpdating
+
+- (void)updateSearchResultsForSearchController:(UISearchController *)searchController {
+    NSString *searchString = searchController.searchBar.text;
+    [self searchForText:searchString];
+    [self.contentView.tableView reloadData];
 }
 
 #pragma mark - Navigation
